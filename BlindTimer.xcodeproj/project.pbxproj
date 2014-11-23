@@ -92,6 +92,8 @@
 		B9D865B21A2167A300631E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D865B31A2167A300631E99 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
 		B9D865B51A2167A300631E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B9D8661E1A228EFB00631E99 /* BlindTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BlindTimer.entitlements; sourceTree = "<group>"; };
+		B9D8661F1A228F4800631E99 /* BlindTimer WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BlindTimer WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		B9D8656C1A21676C00631E99 /* BlindTimer */ = {
 			isa = PBXGroup;
 			children = (
+				B9D8661E1A228EFB00631E99 /* BlindTimer.entitlements */,
 				B9D865711A21676C00631E99 /* AppDelegate.h */,
 				B9D865721A21676C00631E99 /* AppDelegate.m */,
 				B9D865741A21676C00631E99 /* ViewController.h */,
@@ -195,6 +198,7 @@
 		B9D8659B1A2167A300631E99 /* BlindTimer WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B9D8661F1A228F4800631E99 /* BlindTimer WatchKit Extension.entitlements */,
 				B9D8659F1A2167A300631E99 /* InterfaceController.h */,
 				B9D865A01A2167A300631E99 /* InterfaceController.m */,
 				B9D865A21A2167A300631E99 /* NotificationController.h */,
@@ -318,6 +322,12 @@
 				TargetAttributes = {
 					B9D865691A21676C00631E99 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = HLAKBN9F84;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B9D865821A21676C00631E99 = {
 						CreatedOnToolsVersion = 6.2;
@@ -325,6 +335,12 @@
 					};
 					B9D865961A2167A300631E99 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = HLAKBN9F84;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					B9D865AB1A2167A300631E99 = {
 						CreatedOnToolsVersion = 6.2;
@@ -541,9 +557,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlindTimer/BlindTimer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlindTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -551,9 +571,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlindTimer/BlindTimer.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BlindTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -626,6 +650,9 @@
 		B9D865BE1A2167A300631E99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BlindTimer WatchKit Extension/BlindTimer WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -633,6 +660,7 @@
 				INFOPLIST_FILE = "BlindTimer WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -640,9 +668,13 @@
 		B9D865BF1A2167A300631E99 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BlindTimer WatchKit Extension/BlindTimer WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "BlindTimer WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

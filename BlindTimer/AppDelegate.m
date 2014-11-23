@@ -16,8 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Time to change the blinds", @"") message:nil delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

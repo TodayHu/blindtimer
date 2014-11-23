@@ -112,6 +112,7 @@
         NSUInteger remainingSeconds = self.roundLength - self.elapsedSeconds;
         self.startDate = now;
         self.scheduledEndDate = [now dateByAddingTimeInterval:remainingSeconds];
+                
         [self.minutesTimer setDate:self.scheduledEndDate];
         [self.secondsTimer setDate:self.scheduledEndDate];
         [self.minutesTimer start];
@@ -148,8 +149,6 @@
 }
 
 - (void)end:(NSTimer*)timer {
-    //TODO send local notification
-    //TODO reset timer
     [self.secondsTimer stop];
     [self.minutesTimer stop];
     self.elapsedSeconds = 0;
@@ -160,9 +159,13 @@
     }
     
     NSDate *now = [NSDate date];
+    
     self.startDate = now;
     NSUInteger remainingSeconds = self.roundLength;
     self.scheduledEndDate = [now dateByAddingTimeInterval:remainingSeconds];
+    
+    [self notifyBlindChange];
+    
     [self.minutesTimer setDate:self.scheduledEndDate];
     [self.secondsTimer setDate:self.scheduledEndDate];
     [self.minutesTimer start];
@@ -184,6 +187,12 @@
         [self.secondsTimer setHidden:YES];
         [self.minutesTimer setHidden:NO];
     }
+}
+
+- (void)notifyBlindChange {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
+    [sharedDefaults setBool:YES forKey:@"blindsJustChanged"];
+    [sharedDefaults synchronize];
 }
 
 - (IBAction)stopButtonTapped {

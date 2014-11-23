@@ -14,6 +14,15 @@
 		B9D8657B1A21676C00631E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D8657A1A21676C00631E99 /* Images.xcassets */; };
 		B9D8657E1A21676C00631E99 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9D8657C1A21676C00631E99 /* LaunchScreen.xib */; };
 		B9D8658A1A21676C00631E99 /* BlindTimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D865891A21676C00631E99 /* BlindTimerTests.m */; };
+		B9D8659A1A2167A300631E99 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D865991A2167A300631E99 /* WatchKit.framework */; };
+		B9D865A11A2167A300631E99 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D865A01A2167A300631E99 /* InterfaceController.m */; };
+		B9D865A41A2167A300631E99 /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D865A31A2167A300631E99 /* NotificationController.m */; };
+		B9D865A71A2167A300631E99 /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D865A61A2167A300631E99 /* GlanceController.m */; };
+		B9D865A91A2167A300631E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D865A81A2167A300631E99 /* Images.xcassets */; };
+		B9D865AD1A2167A300631E99 /* BlindTimer Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = B9D865AC1A2167A300631E99 /* BlindTimer Watch App.app */; };
+		B9D865B41A2167A300631E99 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D865B31A2167A300631E99 /* Interface.storyboard */; };
+		B9D865B61A2167A300631E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D865B51A2167A300631E99 /* Images.xcassets */; };
+		B9D865B91A2167A300631E99 /* BlindTimer WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9D865971A2167A300631E99 /* BlindTimer WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +33,35 @@
 			remoteGlobalIDString = B9D865691A21676C00631E99;
 			remoteInfo = BlindTimer;
 		};
+		B9D865AE1A2167A300631E99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9D865621A21676C00631E99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9D865AB1A2167A300631E99;
+			remoteInfo = "BlindTimer Watch App";
+		};
+		B9D865B71A2167A300631E99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B9D865621A21676C00631E99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9D865961A2167A300631E99;
+			remoteInfo = "BlindTimer WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B9D865C01A2167A300631E99 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B9D865B91A2167A300631E99 /* BlindTimer WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B9D8656A1A21676C00631E99 /* BlindTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlindTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +77,21 @@
 		B9D865831A21676C00631E99 /* BlindTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlindTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D865881A21676C00631E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9D865891A21676C00631E99 /* BlindTimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlindTimerTests.m; sourceTree = "<group>"; };
+		B9D865971A2167A300631E99 /* BlindTimer WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BlindTimer WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D865991A2167A300631E99 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		B9D8659D1A2167A300631E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D8659E1A2167A300631E99 /* PushNotificationPayload.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PushNotificationPayload.json; sourceTree = "<group>"; };
+		B9D8659F1A2167A300631E99 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		B9D865A01A2167A300631E99 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		B9D865A21A2167A300631E99 /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
+		B9D865A31A2167A300631E99 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		B9D865A51A2167A300631E99 /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
+		B9D865A61A2167A300631E99 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		B9D865A81A2167A300631E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B9D865AC1A2167A300631E99 /* BlindTimer Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BlindTimer Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D865B21A2167A300631E99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D865B31A2167A300631E99 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		B9D865B51A2167A300631E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +109,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9D865941A2167A300631E99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D8659A1A2167A300631E99 /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,6 +125,9 @@
 			children = (
 				B9D8656C1A21676C00631E99 /* BlindTimer */,
 				B9D865861A21676C00631E99 /* BlindTimerTests */,
+				B9D8659B1A2167A300631E99 /* BlindTimer WatchKit Extension */,
+				B9D865B01A2167A300631E99 /* BlindTimer Watch App */,
+				B9D865981A2167A300631E99 /* Frameworks */,
 				B9D8656B1A21676C00631E99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +137,8 @@
 			children = (
 				B9D8656A1A21676C00631E99 /* BlindTimer.app */,
 				B9D865831A21676C00631E99 /* BlindTimerTests.xctest */,
+				B9D865971A2167A300631E99 /* BlindTimer WatchKit Extension.appex */,
+				B9D865AC1A2167A300631E99 /* BlindTimer Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +184,56 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B9D865981A2167A300631E99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9D865991A2167A300631E99 /* WatchKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B9D8659B1A2167A300631E99 /* BlindTimer WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B9D8659F1A2167A300631E99 /* InterfaceController.h */,
+				B9D865A01A2167A300631E99 /* InterfaceController.m */,
+				B9D865A21A2167A300631E99 /* NotificationController.h */,
+				B9D865A31A2167A300631E99 /* NotificationController.m */,
+				B9D865A51A2167A300631E99 /* GlanceController.h */,
+				B9D865A61A2167A300631E99 /* GlanceController.m */,
+				B9D865A81A2167A300631E99 /* Images.xcassets */,
+				B9D8659C1A2167A300631E99 /* Supporting Files */,
+			);
+			path = "BlindTimer WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B9D8659C1A2167A300631E99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9D8659D1A2167A300631E99 /* Info.plist */,
+				B9D8659E1A2167A300631E99 /* PushNotificationPayload.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9D865B01A2167A300631E99 /* BlindTimer Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B9D865B31A2167A300631E99 /* Interface.storyboard */,
+				B9D865B51A2167A300631E99 /* Images.xcassets */,
+				B9D865B11A2167A300631E99 /* Supporting Files */,
+			);
+			path = "BlindTimer Watch App";
+			sourceTree = "<group>";
+		};
+		B9D865B11A2167A300631E99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B9D865B21A2167A300631E99 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +244,12 @@
 				B9D865661A21676C00631E99 /* Sources */,
 				B9D865671A21676C00631E99 /* Frameworks */,
 				B9D865681A21676C00631E99 /* Resources */,
+				B9D865C01A2167A300631E99 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B9D865B81A2167A300631E99 /* PBXTargetDependency */,
 			);
 			name = BlindTimer;
 			productName = BlindTimer;
@@ -157,6 +274,39 @@
 			productReference = B9D865831A21676C00631E99 /* BlindTimerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B9D865961A2167A300631E99 /* BlindTimer WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9D865BD1A2167A300631E99 /* Build configuration list for PBXNativeTarget "BlindTimer WatchKit Extension" */;
+			buildPhases = (
+				B9D865931A2167A300631E99 /* Sources */,
+				B9D865941A2167A300631E99 /* Frameworks */,
+				B9D865951A2167A300631E99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B9D865AF1A2167A300631E99 /* PBXTargetDependency */,
+			);
+			name = "BlindTimer WatchKit Extension";
+			productName = "BlindTimer WatchKit Extension";
+			productReference = B9D865971A2167A300631E99 /* BlindTimer WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		B9D865AB1A2167A300631E99 /* BlindTimer Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9D865BA1A2167A300631E99 /* Build configuration list for PBXNativeTarget "BlindTimer Watch App" */;
+			buildPhases = (
+				B9D865AA1A2167A300631E99 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BlindTimer Watch App";
+			productName = "BlindTimer Watch App";
+			productReference = B9D865AC1A2167A300631E99 /* BlindTimer Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +322,12 @@
 					B9D865821A21676C00631E99 = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = B9D865691A21676C00631E99;
+					};
+					B9D865961A2167A300631E99 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B9D865AB1A2167A300631E99 = {
+						CreatedOnToolsVersion = 6.2;
 					};
 				};
 			};
@@ -190,6 +346,8 @@
 			targets = (
 				B9D865691A21676C00631E99 /* BlindTimer */,
 				B9D865821A21676C00631E99 /* BlindTimerTests */,
+				B9D865961A2167A300631E99 /* BlindTimer WatchKit Extension */,
+				B9D865AB1A2167A300631E99 /* BlindTimer Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -209,6 +367,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9D865951A2167A300631E99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D865A91A2167A300631E99 /* Images.xcassets in Resources */,
+				B9D865AD1A2167A300631E99 /* BlindTimer Watch App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9D865AA1A2167A300631E99 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D865B41A2167A300631E99 /* Interface.storyboard in Resources */,
+				B9D865B61A2167A300631E99 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +409,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9D865931A2167A300631E99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9D865A41A2167A300631E99 /* NotificationController.m in Sources */,
+				B9D865A11A2167A300631E99 /* InterfaceController.m in Sources */,
+				B9D865A71A2167A300631E99 /* GlanceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -240,6 +426,16 @@
 			isa = PBXTargetDependency;
 			target = B9D865691A21676C00631E99 /* BlindTimer */;
 			targetProxy = B9D865841A21676C00631E99 /* PBXContainerItemProxy */;
+		};
+		B9D865AF1A2167A300631E99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9D865AB1A2167A300631E99 /* BlindTimer Watch App */;
+			targetProxy = B9D865AE1A2167A300631E99 /* PBXContainerItemProxy */;
+		};
+		B9D865B81A2167A300631E99 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9D865961A2167A300631E99 /* BlindTimer WatchKit Extension */;
+			targetProxy = B9D865B71A2167A300631E99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -395,6 +591,62 @@
 			};
 			name = Release;
 		};
+		B9D865BB1A2167A300631E99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = BlindTimer_WatchKit_Extension;
+				INFOPLIST_FILE = "BlindTimer Watch App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		B9D865BC1A2167A300631E99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				IBSC_MODULE = BlindTimer_WatchKit_Extension;
+				INFOPLIST_FILE = "BlindTimer Watch App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		B9D865BE1A2167A300631E99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BlindTimer WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B9D865BF1A2167A300631E99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "BlindTimer WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -420,6 +672,22 @@
 			buildConfigurations = (
 				B9D865911A21676C00631E99 /* Debug */,
 				B9D865921A21676C00631E99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9D865BA1A2167A300631E99 /* Build configuration list for PBXNativeTarget "BlindTimer Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9D865BB1A2167A300631E99 /* Debug */,
+				B9D865BC1A2167A300631E99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B9D865BD1A2167A300631E99 /* Build configuration list for PBXNativeTarget "BlindTimer WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9D865BE1A2167A300631E99 /* Debug */,
+				B9D865BF1A2167A300631E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

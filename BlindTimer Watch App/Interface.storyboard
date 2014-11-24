@@ -139,10 +139,55 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="BlindTimer" id="odI-gh-07L"/>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="uCw-4Q-Ouw">
+                            <items>
+                                <timer width="1" height="40" alignment="left" verticalAlignment="center" hidden="YES" textAlignment="center" enabled="YES" id="x3x-kA-Q6z">
+                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <timer width="1" alignment="left" verticalAlignment="center" hidden="YES" textAlignment="center" enabled="YES" format="abbreviated" id="Ab2-cg-MCg">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="boldSystem" pointSize="40"/>
+                                    <calendarUnit key="units" second="YES"/>
+                                </timer>
+                                <group width="1" alignment="left" verticalAlignment="center" id="AkH-0c-B5B">
+                                    <items>
+                                        <label alignment="center" text="Label" id="kia-WC-4CQ">
+                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                        </label>
+                                        <label alignment="center" text="/" id="O5u-ev-cJW">
+                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                        </label>
+                                        <label alignment="center" text="Label" id="6FC-OL-Wx8">
+                                            <fontDescription key="font" type="boldSystem" pointSize="24"/>
+                                        </label>
+                                    </items>
+                                    <color key="backgroundColor" red="0.0039215686269999999" green="0.49803921569999998" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </group>
+                                <group width="1" alignment="left" verticalAlignment="center" id="sDn-V6-2uH">
+                                    <items>
+                                        <label alignment="center" text="Label" id="ZXy-ee-N6C"/>
+                                        <label alignment="center" text="/" id="f8g-Nq-sQE"/>
+                                        <label alignment="center" text="Label" id="ZyH-wl-QcH"/>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="currentBigBlindLabel" destination="6FC-OL-Wx8" id="3wc-ig-2tH"/>
+                        <outlet property="currentSmallBlindLabel" destination="kia-WC-4CQ" id="UPS-Gt-lo1"/>
+                        <outlet property="minutesTimer" destination="x3x-kA-Q6z" id="NLi-H3-DhK"/>
+                        <outlet property="nextBigBlindLabel" destination="ZyH-wl-QcH" id="uW5-EI-hsv"/>
+                        <outlet property="nextSmallBlindLabel" destination="ZXy-ee-N6C" id="3h9-Qn-zb3"/>
+                        <outlet property="secondsTimer" destination="Ab2-cg-MCg" id="hWz-4O-irG"/>
+                    </connections>
                 </glanceController>
             </objects>
             <point key="canvasLocation" x="235" y="672"/>

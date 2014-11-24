@@ -67,6 +67,8 @@
     
     NSDate *now = [NSDate date];
     self.scheduledEndDate = [now dateByAddingTimeInterval:(self.roundLength + 1)];
+    [sharedDefaults setObject:self.scheduledEndDate forKey:@"scheduledEndDate"];
+    [sharedDefaults synchronize];
     [self.minutesTimer setDate:self.scheduledEndDate];
     [self.secondsTimer setDate:self.scheduledEndDate];
     [self.minutesTimer start];
@@ -90,6 +92,8 @@
 }
 
 - (void)updateBlindLabels {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
+    
     int currentSmallBlind = [self.smallBlinds[self.currentStage] intValue];
     int currentBigBlind = [self.bigBlinds[self.currentStage] intValue];
     
@@ -97,9 +101,13 @@
     int nextBigBlind = self.currentStage < self.bigBlinds.count - 1 ? [self.bigBlinds[self.currentStage + 1] intValue] : -1;
     [self.currentSmallBlindLabel setText:[NSString stringWithFormat:@"%d", currentSmallBlind]];
     [self.currentBigBlindLabel setText:[NSString stringWithFormat:@"%d", currentBigBlind]];
+    [sharedDefaults setObject:@(currentSmallBlind) forKey:@"currentSmallBlind"];
+    [sharedDefaults setObject:@(currentBigBlind) forKey:@"currentBigBlind"];
     if(nextSmallBlind > 0){
         [self.nextSmallBlindLabel setText:[NSString stringWithFormat:@"%d", nextSmallBlind]];
         [self.nextBigBlindLabel setText:[NSString stringWithFormat:@"%d", nextBigBlind]];
+        [sharedDefaults setObject:@(nextSmallBlind) forKey:@"nextSmallBlind"];
+        [sharedDefaults setObject:@(nextBigBlind) forKey:@"nextBigBlind"];
     }
 }
 
@@ -132,7 +140,10 @@
     } else {
         NSUInteger remainingSeconds = self.roundLength - self.elapsedSeconds;
         self.startDate = now;
+        NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
         self.scheduledEndDate = [now dateByAddingTimeInterval:remainingSeconds];
+        [sharedDefaults setObject:self.scheduledEndDate forKey:@"scheduledEndDate"];
+        [sharedDefaults synchronize];
         
         [self.minutesTimer setDate:self.scheduledEndDate];
         [self.secondsTimer setDate:self.scheduledEndDate];
@@ -184,7 +195,10 @@
     
     self.startDate = now;
     NSUInteger remainingSeconds = self.roundLength;
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
     self.scheduledEndDate = [now dateByAddingTimeInterval:remainingSeconds];
+    [sharedDefaults setObject:self.scheduledEndDate forKey:@"scheduledEndDate"];
+    [sharedDefaults synchronize];
     
     [self notifyBlindChange];
     
@@ -221,6 +235,9 @@
     self.elapsedSeconds = 0;
     NSDate *now = [NSDate date];
     self.scheduledEndDate = [now dateByAddingTimeInterval:(self.roundLength + 1)];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
+    [sharedDefaults setObject:self.scheduledEndDate forKey:@"scheduledEndDate"];
+    [sharedDefaults synchronize];
     [self.minutesTimer setDate:self.scheduledEndDate];
     [self.secondsTimer setDate:self.scheduledEndDate];
     [self.minutesTimer start];

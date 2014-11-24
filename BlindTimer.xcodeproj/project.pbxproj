@@ -23,6 +23,9 @@
 		B9D865B41A2167A300631E99 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9D865B31A2167A300631E99 /* Interface.storyboard */; };
 		B9D865B61A2167A300631E99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9D865B51A2167A300631E99 /* Images.xcassets */; };
 		B9D865B91A2167A300631E99 /* BlindTimer WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B9D865971A2167A300631E99 /* BlindTimer WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B9D866221A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D866211A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.m */; };
+		B9D866251A22A31B00631E99 /* BTTournamentLengthInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D866241A22A31B00631E99 /* BTTournamentLengthInterfaceController.m */; };
+		B9D866281A22A85300631E99 /* BTRoundLengthInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D866271A22A85300631E99 /* BTRoundLengthInterfaceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,12 @@
 		B9D865B51A2167A300631E99 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B9D8661E1A228EFB00631E99 /* BlindTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BlindTimer.entitlements; sourceTree = "<group>"; };
 		B9D8661F1A228F4800631E99 /* BlindTimer WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BlindTimer WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		B9D866201A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTNumberOfPlayersInterfaceController.h; sourceTree = "<group>"; };
+		B9D866211A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTNumberOfPlayersInterfaceController.m; sourceTree = "<group>"; };
+		B9D866231A22A31B00631E99 /* BTTournamentLengthInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTournamentLengthInterfaceController.h; sourceTree = "<group>"; };
+		B9D866241A22A31B00631E99 /* BTTournamentLengthInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTournamentLengthInterfaceController.m; sourceTree = "<group>"; };
+		B9D866261A22A85300631E99 /* BTRoundLengthInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRoundLengthInterfaceController.h; sourceTree = "<group>"; };
+		B9D866271A22A85300631E99 /* BTRoundLengthInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRoundLengthInterfaceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +216,12 @@
 				B9D865A61A2167A300631E99 /* GlanceController.m */,
 				B9D865A81A2167A300631E99 /* Images.xcassets */,
 				B9D8659C1A2167A300631E99 /* Supporting Files */,
+				B9D866201A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.h */,
+				B9D866211A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.m */,
+				B9D866231A22A31B00631E99 /* BTTournamentLengthInterfaceController.h */,
+				B9D866241A22A31B00631E99 /* BTTournamentLengthInterfaceController.m */,
+				B9D866261A22A85300631E99 /* BTRoundLengthInterfaceController.h */,
+				B9D866271A22A85300631E99 /* BTRoundLengthInterfaceController.m */,
 			);
 			path = "BlindTimer WatchKit Extension";
 			sourceTree = "<group>";
@@ -431,7 +446,10 @@
 			files = (
 				B9D865A41A2167A300631E99 /* NotificationController.m in Sources */,
 				B9D865A11A2167A300631E99 /* InterfaceController.m in Sources */,
+				B9D866221A229EAB00631E99 /* BTNumberOfPlayersInterfaceController.m in Sources */,
 				B9D865A71A2167A300631E99 /* GlanceController.m in Sources */,
+				B9D866281A22A85300631E99 /* BTRoundLengthInterfaceController.m in Sources */,
+				B9D866251A22A31B00631E99 /* BTTournamentLengthInterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

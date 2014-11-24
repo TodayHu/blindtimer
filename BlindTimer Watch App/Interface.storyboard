@@ -54,6 +54,86 @@
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
+        <!--numberOfPlayers-->
+        <scene sceneID="SOr-74-5CX">
+            <objects>
+                <controller identifier="numberOfPlayers" id="XZP-W7-4DM" customClass="BTNumberOfPlayersInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="How many players?" textAlignment="center" id="TzC-ta-9IJ">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" verticalAlignment="center" text="5" textAlignment="center" id="fsR-cJ-Hew">
+                            <fontDescription key="font" type="boldSystem" pointSize="30"/>
+                        </label>
+                        <slider width="1" alignment="left" verticalAlignment="center" value="0.5" minimum="2" maximum="10" steps="8" id="zUe-nz-Ze8">
+                            <connections>
+                                <action selector="numberOfPlayersSliderChanged:" destination="XZP-W7-4DM" id="MUq-AD-Ed4"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="numberOfPlayersLabel" destination="fsR-cJ-Hew" id="ihN-uY-sJb"/>
+                        <outlet property="numberOfPlayersSlider" destination="zUe-nz-Ze8" id="D2d-w3-dLQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="471" y="348"/>
+        </scene>
+        <!--Round-->
+        <scene sceneID="QWJ-tv-DGz">
+            <objects>
+                <controller identifier="roundLength" title="Round" id="P3n-dc-dW5" customClass="BTRoundLengthInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="Round length" textAlignment="center" id="Cam-zx-tVs">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" verticalAlignment="center" text="600" textAlignment="center" id="QKY-1n-Bvv">
+                            <fontDescription key="font" type="boldSystem" pointSize="30"/>
+                        </label>
+                        <slider width="1" alignment="left" verticalAlignment="center" continuous="YES" value="0.5" minimum="10" maximum="1200" steps="119" id="Ly0-GC-TwX">
+                            <connections>
+                                <action selector="roundLengthSliderChanged:" destination="P3n-dc-dW5" id="g9r-O0-TBu"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="OK" id="zq5-x3-QrH">
+                            <connections>
+                                <action selector="okButtonTapped" destination="P3n-dc-dW5" id="LqY-qF-2UF"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="roundLengthLabel" destination="QKY-1n-Bvv" id="MK3-rl-Whf"/>
+                        <outlet property="roundLengthSlider" destination="Ly0-GC-TwX" id="CEU-U4-3Pm"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="476" y="592"/>
+        </scene>
+        <!--tournamentLength-->
+        <scene sceneID="B8K-kI-7qa">
+            <objects>
+                <controller identifier="tournamentLength" id="3eC-a3-B3p" customClass="BTTournamentLengthInterfaceController">
+                    <items>
+                        <label width="1" alignment="left" text="Tournament length" textAlignment="center" id="yPx-ff-u5Y">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label width="1" alignment="left" verticalAlignment="center" text="2" textAlignment="center" id="vZd-Ol-VDv">
+                            <fontDescription key="font" type="boldSystem" pointSize="30"/>
+                        </label>
+                        <slider width="1" alignment="left" verticalAlignment="center" value="0.5" minimum="1" maximum="6" steps="5" id="0Qi-l2-8iE">
+                            <connections>
+                                <action selector="numberOfPlayersSliderChanged:" destination="3eC-a3-B3p" id="1mw-iX-kAq"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="tournamentLengthLabel" destination="vZd-Ol-VDv" id="0dI-ai-0ks"/>
+                        <outlet property="tournamentLengthSlider" destination="0Qi-l2-8iE" id="esU-JU-eGZ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="671" y="347"/>
+        </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>

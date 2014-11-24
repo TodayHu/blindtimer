@@ -43,17 +43,28 @@
         self.currentlyRunning = NO;
         self.elapsedSeconds = 0;
         
-        self.smallBlinds = @[@5,@10,@20,@50,@100,@200,@400,@800];
-        self.bigBlinds = @[@10,@20,@40,@100,@200,@400,@800,@1600];
         self.currentStage = 0;
         
+        [self addMenuItemWithItemIcon:WKMenuItemIconInfo title:NSLocalizedString(@"Settings", @"") action:@selector(settingsButtonTapped)];
         [self addMenuItemWithItemIcon:WKMenuItemIconPlay title:NSLocalizedString(@"Start", @"") action:@selector(startButtonTapped)];
         [self addMenuItemWithImageNamed:@"Stop" title:NSLocalizedString(@"Stop", @"") action:@selector(stopButtonTapped)];
+        
+        NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
+        [sharedDefaults setObject:nil forKey:@"roundLength"];
+        [sharedDefaults synchronize];
     }
     return self;
 }
 
 - (void)willActivate {
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.epseelon.blindtimer.BlindTimer.Documents"];
+    NSNumber *roundLengthNumber = [sharedDefaults objectForKey:@"roundLength"];
+    if(roundLengthNumber){
+        self.roundLength = [roundLengthNumber unsignedIntegerValue];
+        self.smallBlinds = @[@5,@10,@20,@50,@100,@200,@400,@800];
+        self.bigBlinds = @[@10,@20,@40,@100,@200,@400,@800,@1600];
+    }
+    
     NSDate *now = [NSDate date];
     self.scheduledEndDate = [now dateByAddingTimeInterval:(self.roundLength + 1)];
     [self.minutesTimer setDate:self.scheduledEndDate];
@@ -72,6 +83,10 @@
     }
     
     [self updateBlindLabels];
+    
+    if(self.smallBlinds.count == 0){
+        [self presentControllerWithName:@"roundLength" context:nil];
+    }
 }
 
 - (void)updateBlindLabels {
@@ -92,6 +107,11 @@
 
 }
 
+- (IBAction)settingsButtonTapped {
+    [self stopButtonTapped];
+    [self presentControllerWithName:@"roundLength" context:nil];
+}
+
 - (IBAction)startButtonTapped {
     NSDate *now = [NSDate date];
     
@@ -106,13 +126,14 @@
         self.currentlyRunning = NO;
         
         [self clearAllMenuItems];
+        [self addMenuItemWithItemIcon:WKMenuItemIconInfo title:NSLocalizedString(@"Settings", @"") action:@selector(settingsButtonTapped)];
         [self addMenuItemWithItemIcon:WKMenuItemIconPlay title:NSLocalizedString(@"Start", @"") action:@selector(startButtonTapped)];
         [self addMenuItemWithImageNamed:@"Stop" title:NSLocalizedString(@"Stop", @"") action:@selector(stopButtonTapped)];
     } else {
         NSUInteger remainingSeconds = self.roundLength - self.elapsedSeconds;
         self.startDate = now;
         self.scheduledEndDate = [now dateByAddingTimeInterval:remainingSeconds];
-                
+        
         [self.minutesTimer setDate:self.scheduledEndDate];
         [self.secondsTimer setDate:self.scheduledEndDate];
         [self.minutesTimer start];
@@ -136,6 +157,7 @@
         self.currentlyRunning = YES;
         
         [self clearAllMenuItems];
+        [self addMenuItemWithItemIcon:WKMenuItemIconInfo title:NSLocalizedString(@"Settings", @"") action:@selector(settingsButtonTapped)];
         [self addMenuItemWithItemIcon:WKMenuItemIconPause title:NSLocalizedString(@"Pause", @"") action:@selector(startButtonTapped)];
         [self addMenuItemWithImageNamed:@"Stop" title:NSLocalizedString(@"Stop", @"") action:@selector(stopButtonTapped)];
     }
@@ -223,6 +245,7 @@
     [self updateBlindLabels];
     
     [self clearAllMenuItems];
+    [self addMenuItemWithItemIcon:WKMenuItemIconInfo title:NSLocalizedString(@"Settings", @"") action:@selector(settingsButtonTapped)];
     [self addMenuItemWithItemIcon:WKMenuItemIconPlay title:NSLocalizedString(@"Start", @"") action:@selector(startButtonTapped)];
     [self addMenuItemWithImageNamed:@"Stop" title:NSLocalizedString(@"Stop", @"") action:@selector(stopButtonTapped)];
 }
